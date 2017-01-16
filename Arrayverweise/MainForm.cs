@@ -33,9 +33,9 @@ namespace Arrayverweise
 			
 			zaehler_pos++;
 			
-			clearTextBoxesPosition();
-			refreshlstbPositionen();
-			refreshRechnungen();
+			ClearTextBoxesPosition();
+			RefreshlstbPositionen();
+			RefreshRechnungen();
 		}
 		
 		void BtnAddRechnung_Click(object sender, EventArgs e)
@@ -46,11 +46,11 @@ namespace Arrayverweise
 			
 			zaehler_rech++;
 			
-			clearTextBoxesRechnungen();
-			refreshlstbRechnungen();
+			ClearTextBoxesRechnungen();
+			RefreshlstbRechnungen();
 		}
 		
-		private void refreshlstbPositionen()
+		private void RefreshlstbPositionen()
 		{
 			lstbPositionen.Items.Clear();
 			
@@ -59,7 +59,7 @@ namespace Arrayverweise
 			}
 		}
 		
-		private void refreshlstbRechnungen()
+		private void RefreshlstbRechnungen()
 		{
 			lstbRechnungen.Items.Clear();
 			
@@ -68,7 +68,7 @@ namespace Arrayverweise
 			}
 		}
 		
-		private void clearTextBoxesPosition()
+		private void ClearTextBoxesPosition()
 		{
 			txtPosBezeichnung.Clear();
 			txtMenge.Clear();
@@ -76,14 +76,14 @@ namespace Arrayverweise
 			txtAufRechnung.Clear();
 		}
 		
-		private void clearTextBoxesRechnungen()
+		private void ClearTextBoxesRechnungen()
 		{
 			txtBezeichnung.Clear();
 			txtDatum.Clear();
 		}
 		
 
-		private void refreshRechnungen()
+		private void RefreshRechnungen()
 		{
 			for (int i = 0; i < zaehler_rech; i++) {
 				rechnungen[i, 2] = "0";
@@ -101,7 +101,7 @@ namespace Arrayverweise
 				rechnungen[rechnung, 2] = neueRechnung.ToString();
 			}
 			
-			refreshlstbRechnungen();
+			RefreshlstbRechnungen();
 		}
 	}
 }

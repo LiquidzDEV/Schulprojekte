@@ -39,7 +39,7 @@ namespace Schadensmeldung
             cboStatus.SelectedIndex = 0;
         }
 
-        void BtnAddCatDamageClick(object sender, EventArgs e)
+        void BtnAddCatDamage_Click(object sender, EventArgs e)
         {
             if (txtRoom.Text.Trim().Length < 3) return;
 
@@ -49,11 +49,11 @@ namespace Schadensmeldung
             damages[damageIndex, 3] = DateTime.Now.ToString();
             damageIndex++;
 
-            refreshListBox();
-            clearDamageTextBoxes();
+            RefreshListBox();
+            ClearDamageTextBoxes();
         }
 
-        private void refreshListBox()
+        private void RefreshListBox()
         {
             lstbCatDamages.Items.Clear();
 
@@ -63,7 +63,7 @@ namespace Schadensmeldung
             }
         }
 
-        private void clearDamageTextBoxes()
+        private void ClearDamageTextBoxes()
         {
             txtRoom.Clear();
             txtReporter.Clear();
@@ -93,8 +93,8 @@ namespace Schadensmeldung
                 btnAddDamage.Enabled = true;
                 btnEdit.Enabled = true;
             }
-            refreshListView();
-            clearDamageReportsTextBoxes();
+            RefreshListView();
+            ClearDamageReportsTextBoxes();
         }
 
         void BtnAddDamage_Click(object sender, EventArgs e)
@@ -107,11 +107,11 @@ namespace Schadensmeldung
             damageReports[damageReportsIndex, 3] = cboStatus.Text;
             damageReportsIndex++;
 
-            refreshListView();
-            clearDamageReportsTextBoxes();
+            RefreshListView();
+            ClearDamageReportsTextBoxes();
         }
 
-        private void refreshListView()
+        private void RefreshListView()
         {
             lstbDamages.Items.Clear();
 
@@ -131,7 +131,7 @@ namespace Schadensmeldung
             }
         }
 
-        private void clearDamageReportsTextBoxes()
+        private void ClearDamageReportsTextBoxes()
         {
             txtDevice.Clear();
             txtDamage.Clear();
@@ -139,7 +139,7 @@ namespace Schadensmeldung
         }
 
 
-        void btnEdit_Click(object sender, EventArgs e)
+        void BtnEdit_Click(object sender, EventArgs e)
         {
             int index = lstbDamages.SelectedIndex;
             if (index < 0) return;
@@ -148,11 +148,11 @@ namespace Schadensmeldung
             damageReports[arrayReference[index], 2] = txtDamage.Text;
             damageReports[arrayReference[index], 3] = cboStatus.Text;
 
-            refreshListView();
+            RefreshListView();
         }
 
 
-        void LstbDamagesSelectedIndexChanged(object sender, EventArgs e)
+        void LstbDamages_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = lstbDamages.SelectedIndex;
             if (index < 0) return;
@@ -162,7 +162,7 @@ namespace Schadensmeldung
             cboStatus.Text = damageReports[arrayReference[index], 3];
         }
 
-        void MainFormLoad(object sender, EventArgs e)
+        void MainForm_Load(object sender, EventArgs e)
         {
             try
             {
@@ -175,7 +175,7 @@ namespace Schadensmeldung
                     }
                 }
                 damageIndex = read.Length / 4;
-                refreshListBox();
+                RefreshListBox();
 
                 read = System.IO.File.ReadAllLines("damageReports.txt");
                 for (int i = 0; i < read.Length / 4; i++)
@@ -193,7 +193,7 @@ namespace Schadensmeldung
             }
         }
 
-        void MainFormFormClosing(object sender, FormClosingEventArgs e)
+        void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             string[] write = new string[damageIndex * 4];
             for (int i = 0; i < damageIndex; i++)
