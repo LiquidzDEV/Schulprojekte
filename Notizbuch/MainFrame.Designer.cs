@@ -108,7 +108,7 @@
             this.btnEdit.TabIndex = 12;
             this.btnEdit.Text = "Ändern";
             this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // btnSave
             // 
@@ -120,7 +120,7 @@
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Speichern";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // btnDeleteAll
             // 
@@ -132,7 +132,7 @@
             this.btnDeleteAll.TabIndex = 10;
             this.btnDeleteAll.Text = "Alle Löschen";
             this.btnDeleteAll.UseVisualStyleBackColor = true;
-            this.btnDeleteAll.Click += new System.EventHandler(this.btnDeleteAll_Click);
+            this.btnDeleteAll.Click += new System.EventHandler(this.BtnDeleteAll_Click);
             // 
             // btnDelete
             // 
@@ -144,7 +144,7 @@
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "Löschen";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // label4
             // 
@@ -235,7 +235,7 @@
             this.lstNotes.Name = "lstNotes";
             this.lstNotes.Size = new System.Drawing.Size(279, 468);
             this.lstNotes.TabIndex = 0;
-            this.lstNotes.SelectedIndexChanged += new System.EventHandler(this.lstNotes_SelectedIndexChanged);
+            this.lstNotes.SelectedIndexChanged += new System.EventHandler(this.LstNotes_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -263,7 +263,7 @@
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Suchen";
             this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // lstSearch
             // 

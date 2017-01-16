@@ -191,7 +191,7 @@ namespace Schadensmeldung
             this.btnAddCatDamage.TabIndex = 14;
             this.btnAddCatDamage.Text = "+";
             this.btnAddCatDamage.UseVisualStyleBackColor = true;
-            this.btnAddCatDamage.Click += new System.EventHandler(this.BtnAddCatDamageClick);
+            this.btnAddCatDamage.Click += new System.EventHandler(this.BtnAddCatDamage_Click);
             // 
             // txtOwner
             // 
@@ -312,7 +312,7 @@ namespace Schadensmeldung
             this.btnEdit.TabIndex = 10;
             this.btnEdit.Text = "Ändern";
             this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // cboStatus
             // 
@@ -394,7 +394,7 @@ namespace Schadensmeldung
             this.lstbDamages.Name = "lstbDamages";
             this.lstbDamages.Size = new System.Drawing.Size(493, 238);
             this.lstbDamages.TabIndex = 11;
-            this.lstbDamages.SelectedIndexChanged += new System.EventHandler(this.LstbDamagesSelectedIndexChanged);
+            this.lstbDamages.SelectedIndexChanged += new System.EventHandler(this.LstbDamages_SelectedIndexChanged);
             // 
             // MainForm
             // 
@@ -407,8 +407,8 @@ namespace Schadensmeldung
             this.MinimumSize = new System.Drawing.Size(545, 608);
             this.Name = "MainForm";
             this.Text = "Schadensmeldung";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormFormClosing);
-            this.Load += new System.EventHandler(this.MainFormLoad);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
