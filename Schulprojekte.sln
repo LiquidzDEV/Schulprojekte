@@ -1,9 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio 2012
+# SharpDevelop 5.1
 VisualStudioVersion = 15.0.26020.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testprojekt", "Testprojekt\Testprojekt.csproj", "{FB5AD4FB-8517-4B46-85BA-C8E1F38A4A8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrayverweise", "Arrayverweise\Arrayverweise.csproj", "{B5B564B1-1629-4D21-9BF9-88EF921256F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autoverleih", "Autoverleih\Autoverleih.csproj", "{C8A8C454-F578-4AA6-81B0-4970E3825004}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notizbuch", "Notizbuch\Notizbuch.csproj", "{40548579-D6C8-4AAA-8C62-98A44090BE8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schadensmeldung", "Schadensmeldung\Schadensmeldung.csproj", "{6BF600F7-6190-4715-9001-5C54A2E720D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketautomat", "Ticketautomat\Ticketautomat.csproj", "{A8BA0EA5-FF61-4A82-89E4-2FE5CEF23F0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Werkzeugverleih", "Werkzeugverleih\Werkzeugverleih.csproj", "{70517348-9874-47FF-8C90-0593D0643C42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +22,30 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FB5AD4FB-8517-4B46-85BA-C8E1F38A4A8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB5AD4FB-8517-4B46-85BA-C8E1F38A4A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB5AD4FB-8517-4B46-85BA-C8E1F38A4A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB5AD4FB-8517-4B46-85BA-C8E1F38A4A8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5B564B1-1629-4D21-9BF9-88EF921256F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5B564B1-1629-4D21-9BF9-88EF921256F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5B564B1-1629-4D21-9BF9-88EF921256F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5B564B1-1629-4D21-9BF9-88EF921256F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8A8C454-F578-4AA6-81B0-4970E3825004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A8C454-F578-4AA6-81B0-4970E3825004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A8C454-F578-4AA6-81B0-4970E3825004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A8C454-F578-4AA6-81B0-4970E3825004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40548579-D6C8-4AAA-8C62-98A44090BE8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40548579-D6C8-4AAA-8C62-98A44090BE8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40548579-D6C8-4AAA-8C62-98A44090BE8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40548579-D6C8-4AAA-8C62-98A44090BE8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BF600F7-6190-4715-9001-5C54A2E720D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BF600F7-6190-4715-9001-5C54A2E720D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BF600F7-6190-4715-9001-5C54A2E720D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BF600F7-6190-4715-9001-5C54A2E720D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8BA0EA5-FF61-4A82-89E4-2FE5CEF23F0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8BA0EA5-FF61-4A82-89E4-2FE5CEF23F0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8BA0EA5-FF61-4A82-89E4-2FE5CEF23F0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8BA0EA5-FF61-4A82-89E4-2FE5CEF23F0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70517348-9874-47FF-8C90-0593D0643C42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70517348-9874-47FF-8C90-0593D0643C42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70517348-9874-47FF-8C90-0593D0643C42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70517348-9874-47FF-8C90-0593D0643C42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
