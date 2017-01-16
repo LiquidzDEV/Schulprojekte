@@ -59,7 +59,7 @@
             this.lstbWerkzeuge.Name = "lstbWerkzeuge";
             this.lstbWerkzeuge.Size = new System.Drawing.Size(257, 308);
             this.lstbWerkzeuge.TabIndex = 0;
-            this.lstbWerkzeuge.SelectedIndexChanged += new System.EventHandler(this.lstbWerkzeuge_SelectedIndexChanged);
+            this.lstbWerkzeuge.SelectedIndexChanged += new System.EventHandler(this.LstbWerkzeuge_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -126,7 +126,7 @@
             this.txtTageKurzausleihe.Name = "txtTageKurzausleihe";
             this.txtTageKurzausleihe.Size = new System.Drawing.Size(162, 22);
             this.txtTageKurzausleihe.TabIndex = 7;
-            this.txtTageKurzausleihe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.showOnlyNumbers);
+            this.txtTageKurzausleihe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ShowOnlyNumbers);
             // 
             // txtPreisKurzausleihe
             // 
@@ -135,7 +135,7 @@
             this.txtPreisKurzausleihe.Name = "txtPreisKurzausleihe";
             this.txtPreisKurzausleihe.Size = new System.Drawing.Size(162, 22);
             this.txtPreisKurzausleihe.TabIndex = 8;
-            this.txtPreisKurzausleihe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.showOnlyNumbers);
+            this.txtPreisKurzausleihe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ShowOnlyNumbers);
             // 
             // txtTageLangausleihe
             // 
@@ -144,7 +144,7 @@
             this.txtTageLangausleihe.Name = "txtTageLangausleihe";
             this.txtTageLangausleihe.Size = new System.Drawing.Size(162, 22);
             this.txtTageLangausleihe.TabIndex = 9;
-            this.txtTageLangausleihe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.showOnlyNumbers);
+            this.txtTageLangausleihe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ShowOnlyNumbers);
             // 
             // txtPreisLangausleihe
             // 
@@ -153,7 +153,7 @@
             this.txtPreisLangausleihe.Name = "txtPreisLangausleihe";
             this.txtPreisLangausleihe.Size = new System.Drawing.Size(162, 22);
             this.txtPreisLangausleihe.TabIndex = 10;
-            this.txtPreisLangausleihe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.showOnlyNumbers);
+            this.txtPreisLangausleihe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ShowOnlyNumbers);
             // 
             // btnSpeichern
             // 
@@ -164,7 +164,7 @@
             this.btnSpeichern.TabIndex = 11;
             this.btnSpeichern.Text = "Speichern";
             this.btnSpeichern.UseVisualStyleBackColor = true;
-            this.btnSpeichern.Click += new System.EventHandler(this.btnSpeichern_Click);
+            this.btnSpeichern.Click += new System.EventHandler(this.BtnSpeichern_Click);
             // 
             // btnAusleihen
             // 
@@ -175,7 +175,7 @@
             this.btnAusleihen.TabIndex = 15;
             this.btnAusleihen.Text = "Ausleihen";
             this.btnAusleihen.UseVisualStyleBackColor = true;
-            this.btnAusleihen.Click += new System.EventHandler(this.btnAusleihen_Click);
+            this.btnAusleihen.Click += new System.EventHandler(this.BtnAusleihen_Click);
             // 
             // label6
             // 
@@ -194,7 +194,7 @@
             this.txtTageAusgeliehen.Name = "txtTageAusgeliehen";
             this.txtTageAusgeliehen.Size = new System.Drawing.Size(221, 22);
             this.txtTageAusgeliehen.TabIndex = 14;
-            this.txtTageAusgeliehen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.showOnlyNumbers);
+            this.txtTageAusgeliehen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ShowOnlyNumbers);
             // 
             // lblAusgabe
             // 

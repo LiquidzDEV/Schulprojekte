@@ -15,17 +15,17 @@ namespace Werkzeugverleih
             lblAusgabe.Text = "";
         }
 
-        private void btnSpeichern_Click(object sender, EventArgs e)
+        private void BtnSpeichern_Click(object sender, EventArgs e)
         {
             if (txtBezeichnung.Text.Trim().Length < 1) return;
 
             werkzeuge.Add(new Werkzeug(txtBezeichnung.Text, txtTageKurzausleihe.Text, txtPreisKurzausleihe.Text, txtTageLangausleihe.Text, txtPreisLangausleihe.Text));
 
-            clearTextBoxes();
-            refreshListBox();
+            ClearTextBoxes();
+            RefreshListBox();
         }
 
-        private void clearTextBoxes()
+        private void ClearTextBoxes()
         {
             txtBezeichnung.Clear();
             txtPreisKurzausleihe.Clear();
@@ -34,7 +34,7 @@ namespace Werkzeugverleih
             txtTageLangausleihe.Clear();
         }
 
-        private void refreshListBox()
+        private void RefreshListBox()
         {
             lstbWerkzeuge.Items.Clear();
 
@@ -44,7 +44,7 @@ namespace Werkzeugverleih
             }
         }
 
-        private void lstbWerkzeuge_SelectedIndexChanged(object sender, EventArgs e)
+        private void LstbWerkzeuge_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = lstbWerkzeuge.SelectedIndex;
             if (index < 0) return;
@@ -56,7 +56,7 @@ namespace Werkzeugverleih
             txtPreisLangausleihe.Text = werkzeuge[index].preisLangausleihe.ToString();
         }
 
-        private void btnAusleihen_Click(object sender, EventArgs e)
+        private void BtnAusleihen_Click(object sender, EventArgs e)
         {
             int index = lstbWerkzeuge.SelectedIndex;
             if (index < 0) return;
@@ -80,7 +80,7 @@ namespace Werkzeugverleih
             txtTageAusgeliehen.Clear();
         }
 
-        private void showOnlyNumbers(object sender, KeyPressEventArgs e)
+        private void ShowOnlyNumbers(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsControl(e.KeyChar) && !Char.IsDigit(e.KeyChar))
             {
