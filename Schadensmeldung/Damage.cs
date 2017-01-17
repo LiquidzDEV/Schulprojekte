@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Schadensmeldung
+﻿namespace Schadensmeldung
 {
     class Damage
     {
         public int damageCategory;
         public string device;
         public string damage;
-        public int status;
+        public string status;
 
-        public Damage(int damageCategory, string device, string damage, int status)
+        public Damage(int damageCategory, string device, string damage, string status)
         {
             this.damageCategory = damageCategory;
             this.device = device;

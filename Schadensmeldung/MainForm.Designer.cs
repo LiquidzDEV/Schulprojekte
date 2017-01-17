@@ -79,7 +79,6 @@ namespace Schadensmeldung
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lstbDamage = new System.Windows.Forms.ListBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.cboStatus = new System.Windows.Forms.ComboBox();
             this.btnAddDamage = new System.Windows.Forms.Button();
@@ -88,6 +87,10 @@ namespace Schadensmeldung
             this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.lvwDamages = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -286,7 +289,7 @@ namespace Schadensmeldung
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.lstbDamage);
+            this.groupBox2.Controls.Add(this.lvwDamages);
             this.groupBox2.Controls.Add(this.btnEdit);
             this.groupBox2.Controls.Add(this.cboStatus);
             this.groupBox2.Controls.Add(this.btnAddDamage);
@@ -301,15 +304,6 @@ namespace Schadensmeldung
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Schäden";
-            // 
-            // lstbDamage
-            // 
-            this.lstbDamage.FormattingEnabled = true;
-            this.lstbDamage.Location = new System.Drawing.Point(6, 19);
-            this.lstbDamage.Name = "lstbDamage";
-            this.lstbDamage.Size = new System.Drawing.Size(493, 238);
-            this.lstbDamage.TabIndex = 11;
-            this.lstbDamage.SelectedIndexChanged += new System.EventHandler(this.LstbDamages_SelectedIndexChanged);
             // 
             // btnEdit
             // 
@@ -396,6 +390,34 @@ namespace Schadensmeldung
             this.label9.TabIndex = 2;
             this.label9.Text = "Gerät:";
             // 
+            // lvwDamages
+            // 
+            this.lvwDamages.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.lvwDamages.Location = new System.Drawing.Point(6, 19);
+            this.lvwDamages.Name = "lvwDamages";
+            this.lvwDamages.Size = new System.Drawing.Size(487, 250);
+            this.lvwDamages.TabIndex = 11;
+            this.lvwDamages.UseCompatibleStateImageBehavior = false;
+            this.lvwDamages.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Gerät";
+            this.columnHeader1.Width = 120;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Schaden";
+            this.columnHeader2.Width = 180;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Status";
+            this.columnHeader3.Width = 80;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,6 +440,9 @@ namespace Schadensmeldung
 
 		}
 
-        private System.Windows.Forms.ListBox lstbDamage;
+        private System.Windows.Forms.ListView lvwDamages;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }
