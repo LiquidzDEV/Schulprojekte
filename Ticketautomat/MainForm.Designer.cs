@@ -84,7 +84,7 @@
             this.cbxTickets.Name = "cbxTickets";
             this.cbxTickets.Size = new System.Drawing.Size(119, 21);
             this.cbxTickets.TabIndex = 7;
-            this.cbxTickets.SelectedIndexChanged += new System.EventHandler(this.CbxTickets_SelectedIndexChanged);
+            this.cbxTickets.SelectedIndexChanged += new System.EventHandler(this.cbxTickets_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -115,7 +115,7 @@
             this.cbxMoney.Name = "cbxMoney";
             this.cbxMoney.Size = new System.Drawing.Size(92, 21);
             this.cbxMoney.TabIndex = 9;
-            this.cbxMoney.SelectedIndexChanged += new System.EventHandler(this.CbxMoney_SelectedIndexChanged);
+            this.cbxMoney.SelectedIndexChanged += new System.EventHandler(this.cbxMoney_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -138,7 +138,7 @@
             this.btnPay.TabIndex = 11;
             this.btnPay.Text = "Einwerfen";
             this.btnPay.UseVisualStyleBackColor = true;
-            this.btnPay.Click += new System.EventHandler(this.BtnPay_Click);
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // lblDescription
             // 
@@ -160,7 +160,7 @@
             this.btnStorno.TabIndex = 13;
             this.btnStorno.Text = "Geld zurück";
             this.btnStorno.UseVisualStyleBackColor = true;
-            this.btnStorno.Click += new System.EventHandler(this.BtnStorno_Click);
+            this.btnStorno.Click += new System.EventHandler(this.btnStorno_Click);
             // 
             // TicketAutomat
             // 

@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Autoverleih
 {
-    public partial class Form1 : Form
+	public partial class Form1 : Form
 	{
 		// Bildung eines Arrays mit 5 Spalten und 10 Zeilen
 		string[,] auto = new string[10, 5];
@@ -15,7 +16,7 @@ namespace Autoverleih
 		}
 
 		// Aufgabe 1
-		private void BtnSpeichern_Click(object sender, EventArgs e)
+		private void btnSpeichern_Click(object sender, EventArgs e)
 		{
 			auto[zaehler, 0] = txtBezeichnung.Text;
 			auto[zaehler, 1] = txtTyp.Text;
@@ -23,15 +24,15 @@ namespace Autoverleih
 			auto[zaehler, 3] = txtPreisTag.Text;
 			auto[zaehler, 4] = txtKilometerstand.Text;
 
-			ClearTextBoxes();
+			clearTextBoxes();
 
 			zaehler++;
 
-			RefreshListBox();
-			RefreshAveragePrice();
+			refreshListBox();
+			refreshAveragePrice();
 		}
 
-		private void ClearTextBoxes()
+		private void clearTextBoxes()
 		{
 			txtBezeichnung.Text = "";
 			txtTyp.Text = "";
@@ -41,7 +42,7 @@ namespace Autoverleih
 		}
 
 		// Hält die lstb Aktuell; Diese Funktion wird an verschiedenen Programmpunkte verwendet.
-		private void RefreshListBox()
+		private void refreshListBox()
 		{
 			lstbVerleihautoListe.Items.Clear();
 
@@ -50,7 +51,7 @@ namespace Autoverleih
 			}
 		}
 
-		private void LstbVerleihautoListe_SelectedIndexChanged(object sender, EventArgs e)
+		private void lstbVerleihautoListe_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			int index = lstbVerleihautoListe.SelectedIndex;
 			if (index >= 0) {
@@ -63,7 +64,7 @@ namespace Autoverleih
 		}
 
 		// Aufgabe 2
-		private void BtnBezahlen_Click(object sender, EventArgs e)
+		private void btnBezahlen_Click(object sender, EventArgs e)
 		{
 			int index = lstbVerleihautoListe.SelectedIndex;
 			if (index >= 0) {
@@ -91,7 +92,7 @@ namespace Autoverleih
 		}
 
 		// Aufgabe 3
-		private void BtnLoeschen_Click(object sender, EventArgs e)
+		private void btnLoeschen_Click(object sender, EventArgs e)
 		{
 			int index = lstbVerleihautoListe.SelectedIndex;
 			if (index >= 0) {
@@ -103,27 +104,27 @@ namespace Autoverleih
 					auto[i, 4] = auto[i + 1, 4];
 				}
 				zaehler--;
-				ClearTextBoxes();
-				RefreshListBox();
-				RefreshAveragePrice();
+				clearTextBoxes();
+				refreshListBox();
+				refreshAveragePrice();
 			}
 		}
 
 		//Aufgabe 4
-		private void BtnAendern_Click(object sender, EventArgs e)
+		private void btnAendern_Click(object sender, EventArgs e)
 		{
 			int index = lstbVerleihautoListe.SelectedIndex;
 			if (index >= 0) {
 				auto[index, 3] = txtPreisTag.Text;
 
-				ClearTextBoxes();
+				clearTextBoxes();
 
-				RefreshAveragePrice();
+				refreshAveragePrice();
 			}
 		}
 
 		// Aufgabe 5
-		private void RefreshAveragePrice()
+		private void refreshAveragePrice()
 		{
 			if (zaehler > 0) {
 				int gesamtPreisProTag = 0;
@@ -159,8 +160,8 @@ namespace Autoverleih
 				}
 			}
 			zaehler = read.Length / 5;
-			RefreshListBox();
-			RefreshAveragePrice();    
+			refreshListBox();
+			refreshAveragePrice();    
 		}
 	}
 }

@@ -4,7 +4,6 @@
  * Time: 06:14
  */
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Schadensmeldung
@@ -14,12 +13,13 @@ namespace Schadensmeldung
     /// </summary>
     public partial class MainForm : Form
     {
-        /// <summary>Schadensmeldungen -><br></br>0:"Raum" 1:"Melder" 2:"Raum von" 3:"Datum"</summary>
-        string[,] damageReports = new string[100, 4];
-        int damageReportsIndex;
+        /// <summary>Schaden -><br></br>0:"Raum" 1:"Melder" 2:"Raum von" 3:"Datum"</summary>
+        string[,] damages = new string[100, 4];
+        int damageIndex;
 
-        /// <summary>Schaeden</summary>
-        List<Damage> damages = new List<Damage>();
+        /// <summary>Schadensmeldungen -><br></br>0:"zugehöriger Schaden" 1:"Gerät" 2:"Schaden" 3:"Status"</summary>
+        string[,] damageReports = new string[1000, 4];
+        int damageReportsIndex;
 
         /// <summary>
         /// Referenz Array:<para />
@@ -39,31 +39,31 @@ namespace Schadensmeldung
             cboStatus.SelectedIndex = 0;
         }
 
-        void BtnAddCatDamage_Click(object sender, EventArgs e)
+        void BtnAddCatDamageClick(object sender, EventArgs e)
         {
             if (txtRoom.Text.Trim().Length < 3) return;
 
-            damageReports[damageReportsIndex, 0] = txtRoom.Text;
-            damageReports[damageReportsIndex, 1] = txtReporter.Text;
-            damageReports[damageReportsIndex, 2] = txtOwner.Text;
-            damageReports[damageReportsIndex, 3] = DateTime.Now.ToString();
-            damageReportsIndex++;
+            damages[damageIndex, 0] = txtRoom.Text;
+            damages[damageIndex, 1] = txtReporter.Text;
+            damages[damageIndex, 2] = txtOwner.Text;
+            damages[damageIndex, 3] = DateTime.Now.ToString();
+            damageIndex++;
 
-            RefreshListBox();
-            ClearDamageTextBoxes();
+            refreshListBox();
+            clearDamageTextBoxes();
         }
 
-        private void RefreshListBox()
+        private void refreshListBox()
         {
             lstbCatDamages.Items.Clear();
 
-            for (int i = 0; i < damageReportsIndex; i++)
+            for (int i = 0; i < damageIndex; i++)
             {
-                lstbCatDamages.Items.Add("Meldung von " + damageReports[i, 1] + " am " + damageReports[i, 3]);
+                lstbCatDamages.Items.Add("Meldung von " + damages[i, 1] + " am " + damages[i, 3]);
             }
         }
 
-        private void ClearDamageTextBoxes()
+        private void clearDamageTextBoxes()
         {
             txtRoom.Clear();
             txtReporter.Clear();
@@ -83,55 +83,55 @@ namespace Schadensmeldung
             }
             else
             {
-                lblRoom.Text = damageReports[index, 0];
-                lblReporter.Text = damageReports[index, 1];
-                lblOwner.Text = damageReports[index, 2];
-                lblDate.Text = damageReports[index, 3];
+                lblRoom.Text = damages[index, 0];
+                lblReporter.Text = damages[index, 1];
+                lblOwner.Text = damages[index, 2];
+                lblDate.Text = damages[index, 3];
                 txtDevice.Enabled = true;
                 txtDamage.Enabled = true;
                 cboStatus.Enabled = true;
                 btnAddDamage.Enabled = true;
                 btnEdit.Enabled = true;
             }
-            RefreshListView();
-            ClearDamageReportsTextBoxes();
+            refreshListView();
+            clearDamageReportsTextBoxes();
         }
 
         void BtnAddDamage_Click(object sender, EventArgs e)
         {
             if (txtDevice.Text.Trim().Length < 3 || txtDamage.Text.Trim().Length < 3) return;
 
-            damages.Add(new Damage(lstbCatDamages.SelectedIndex, txtDevice.Text, txtDamage.Text, cboStatus.Text));
+            damageReports[damageReportsIndex, 0] = lstbCatDamages.SelectedIndex.ToString();
+            damageReports[damageReportsIndex, 1] = txtDevice.Text;
+            damageReports[damageReportsIndex, 2] = txtDamage.Text;
+            damageReports[damageReportsIndex, 3] = cboStatus.Text;
+            damageReportsIndex++;
 
-            RefreshListView();
-            ClearDamageReportsTextBoxes();
+            refreshListView();
+            clearDamageReportsTextBoxes();
         }
 
-        private void RefreshListView()
+        private void refreshListView()
         {
-            lvwDamages.Items.Clear();
+            lstbDamages.Items.Clear();
 
-            for (int i = 0; i < damages.Count; i++)
+            for (int i = 0; i < damageReportsIndex; i++)
             {
+
                 int category = lstbCatDamages.SelectedIndex;
 
-                if (damages[i].damageCategory == category)
+                if (Int32.Parse(damageReports[i, 0]) == category)
                 {
-                    ListViewItem item = new ListViewItem()
-                    {
-                        Text = damages[i].device
-                    };
-                    item.SubItems.Add(damages[i].damage);
-                    item.SubItems.Add(damages[i].status);
+                    string item = damageReports[i, 1] + "\t" + damageReports[i, 1] + "\t" + damageReports[i, 2] + "\t" + damageReports[i, 3];
 
-                    int index = lvwDamages.Items.Add(item).Index;
+                    int index = lstbDamages.Items.Add(item);
 
                     arrayReference[index] = i;
                 }
             }
         }
 
-        private void ClearDamageReportsTextBoxes()
+        private void clearDamageReportsTextBoxes()
         {
             txtDevice.Clear();
             txtDamage.Clear();
@@ -139,32 +139,30 @@ namespace Schadensmeldung
         }
 
 
-        void BtnEdit_Click(object sender, EventArgs e)
+        void btnEdit_Click(object sender, EventArgs e)
         {
-            if (lvwDamages.SelectedIndices.Count < 1) return;
-            int index = lvwDamages.SelectedIndices[0];
+            int index = lstbDamages.SelectedIndex;
             if (index < 0) return;
 
-            damages[arrayReference[index]].device = txtDevice.Text;
-            damages[arrayReference[index]].damage = txtDamage.Text;
-            damages[arrayReference[index]].status = cboStatus.Text;
+            damageReports[arrayReference[index], 1] = txtDevice.Text;
+            damageReports[arrayReference[index], 2] = txtDamage.Text;
+            damageReports[arrayReference[index], 3] = cboStatus.Text;
 
-            RefreshListView();
+            refreshListView();
         }
 
 
-        void LstbDamages_SelectedIndexChanged(object sender, EventArgs e)
+        void LstbDamagesSelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lvwDamages.SelectedIndices.Count < 1) return;
-            int index = lvwDamages.SelectedIndices[0];
+            int index = lstbDamages.SelectedIndex;
             if (index < 0) return;
 
-            txtDevice.Text = damages[arrayReference[index]].device;
-            txtDamage.Text = damages[arrayReference[index]].damage;
-            cboStatus.Text = damages[arrayReference[index]].status;
+            txtDevice.Text = damageReports[arrayReference[index], 1];
+            txtDamage.Text = damageReports[arrayReference[index], 2];
+            cboStatus.Text = damageReports[arrayReference[index], 3];
         }
 
-        void MainForm_Load(object sender, EventArgs e)
+        void MainFormLoad(object sender, EventArgs e)
         {
             try
             {
@@ -173,17 +171,21 @@ namespace Schadensmeldung
                 {
                     for (int u = 0; u < 4; u++)
                     {
-                        damageReports[i, u] = read[i * 4 + u];
+                        damages[i, u] = read[i * 4 + u];
                     }
                 }
-                damageReportsIndex = read.Length / 4;
-                RefreshListBox();
+                damageIndex = read.Length / 4;
+                refreshListBox();
 
                 read = System.IO.File.ReadAllLines("damageReports.txt");
                 for (int i = 0; i < read.Length / 4; i++)
                 {
-                    damages.Add(new Damage(Int32.Parse(read[i * 4 + 0]), read[i * 4 + 1], read[i * 4 + 2], read[i * 4 + 3]));
+                    for (int u = 0; u < 4; u++)
+                    {
+                        damageReports[i, u] = read[i * 4 + u];
+                    }
                 }
+                damageReportsIndex = read.Length / 4;
             }
             catch (Exception)
             {
@@ -191,25 +193,25 @@ namespace Schadensmeldung
             }
         }
 
-        void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        void MainFormFormClosing(object sender, FormClosingEventArgs e)
         {
-            string[] write = new string[damageReportsIndex * 4];
+            string[] write = new string[damageIndex * 4];
+            for (int i = 0; i < damageIndex; i++)
+            {
+                for (int u = 0; u < 4; u++)
+                {
+                    write[i * 4 + u] = damages[i, u];
+                }
+            }
+            System.IO.File.WriteAllLines("damages.txt", write);
+
+            write = new string[damageReportsIndex * 4];
             for (int i = 0; i < damageReportsIndex; i++)
             {
                 for (int u = 0; u < 4; u++)
                 {
                     write[i * 4 + u] = damageReports[i, u];
                 }
-            }
-            System.IO.File.WriteAllLines("damages.txt", write);
-
-            write = new string[damages.Count * 4];
-            for (int i = 0; i < damages.Count; i++)
-            {
-                write[i * 4 + 0] = damages[i].damageCategory.ToString();
-                write[i * 4 + 1] = damages[i].device;
-                write[i * 4 + 2] = damages[i].damage;
-                write[i * 4 + 3] = damages[i].status;
             }
             System.IO.File.WriteAllLines("damageReports.txt", write);
         }
