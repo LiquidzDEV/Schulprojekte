@@ -1,8 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-# SharpDevelop 5.1
-VisualStudioVersion = 15.0.26020.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrayverweise", "Arrayverweise\Arrayverweise.csproj", "{B5B564B1-1629-4D21-9BF9-88EF921256F7}"
 EndProject
@@ -15,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketautomat", "Ticketautomat\Ticketautomat.csproj", "{A8BA0EA5-FF61-4A82-89E4-2FE5CEF23F0D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Werkzeugverleih", "Werkzeugverleih\Werkzeugverleih.csproj", "{70517348-9874-47FF-8C90-0593D0643C42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projektverwaltung", "Projektverwaltung\Projektverwaltung.csproj", "{5EA976AC-A063-4143-9090-4B93D85671C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +47,10 @@ Global
 		{70517348-9874-47FF-8C90-0593D0643C42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70517348-9874-47FF-8C90-0593D0643C42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70517348-9874-47FF-8C90-0593D0643C42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EA976AC-A063-4143-9090-4B93D85671C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EA976AC-A063-4143-9090-4B93D85671C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EA976AC-A063-4143-9090-4B93D85671C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EA976AC-A063-4143-9090-4B93D85671C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
