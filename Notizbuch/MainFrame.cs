@@ -175,7 +175,7 @@ namespace Notizbuch
                 index = read.Length / 5;
                 refreshListBox();
             }
-            catch(Exception exc)
+            catch(Exception)
             {
                 System.Diagnostics.Debug.WriteLine("Keine Daten gefunden!");
             }  
