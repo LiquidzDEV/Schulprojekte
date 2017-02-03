@@ -79,7 +79,6 @@ namespace Schadensmeldung
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lstbDamage = new System.Windows.Forms.ListBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.cboStatus = new System.Windows.Forms.ComboBox();
             this.btnAddDamage = new System.Windows.Forms.Button();
@@ -88,6 +87,7 @@ namespace Schadensmeldung
             this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.lstbDamages = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -123,7 +123,7 @@ namespace Schadensmeldung
             this.groupBox1.Size = new System.Drawing.Size(505, 223);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Schadensmeldungen";
+            this.groupBox1.Text = "Schaden";
             // 
             // lblDate
             // 
@@ -191,7 +191,7 @@ namespace Schadensmeldung
             this.btnAddCatDamage.TabIndex = 14;
             this.btnAddCatDamage.Text = "+";
             this.btnAddCatDamage.UseVisualStyleBackColor = true;
-            this.btnAddCatDamage.Click += new System.EventHandler(this.BtnAddCatDamage_Click);
+            this.btnAddCatDamage.Click += new System.EventHandler(this.BtnAddCatDamageClick);
             // 
             // txtOwner
             // 
@@ -286,7 +286,7 @@ namespace Schadensmeldung
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.lstbDamage);
+            this.groupBox2.Controls.Add(this.lstbDamages);
             this.groupBox2.Controls.Add(this.btnEdit);
             this.groupBox2.Controls.Add(this.cboStatus);
             this.groupBox2.Controls.Add(this.btnAddDamage);
@@ -300,16 +300,7 @@ namespace Schadensmeldung
             this.groupBox2.Size = new System.Drawing.Size(505, 317);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Schäden";
-            // 
-            // lstbDamage
-            // 
-            this.lstbDamage.FormattingEnabled = true;
-            this.lstbDamage.Location = new System.Drawing.Point(6, 19);
-            this.lstbDamage.Name = "lstbDamage";
-            this.lstbDamage.Size = new System.Drawing.Size(493, 238);
-            this.lstbDamage.TabIndex = 11;
-            this.lstbDamage.SelectedIndexChanged += new System.EventHandler(this.LstbDamages_SelectedIndexChanged);
+            this.groupBox2.Text = "Schadensmeldungen";
             // 
             // btnEdit
             // 
@@ -321,7 +312,7 @@ namespace Schadensmeldung
             this.btnEdit.TabIndex = 10;
             this.btnEdit.Text = "Ändern";
             this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // cboStatus
             // 
@@ -396,6 +387,15 @@ namespace Schadensmeldung
             this.label9.TabIndex = 2;
             this.label9.Text = "Gerät:";
             // 
+            // lstbDamages
+            // 
+            this.lstbDamages.FormattingEnabled = true;
+            this.lstbDamages.Location = new System.Drawing.Point(6, 19);
+            this.lstbDamages.Name = "lstbDamages";
+            this.lstbDamages.Size = new System.Drawing.Size(493, 238);
+            this.lstbDamages.TabIndex = 11;
+            this.lstbDamages.SelectedIndexChanged += new System.EventHandler(this.LstbDamagesSelectedIndexChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,8 +407,8 @@ namespace Schadensmeldung
             this.MinimumSize = new System.Drawing.Size(545, 608);
             this.Name = "MainForm";
             this.Text = "Schadensmeldung";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormFormClosing);
+            this.Load += new System.EventHandler(this.MainFormLoad);
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -418,6 +418,6 @@ namespace Schadensmeldung
 
 		}
 
-        private System.Windows.Forms.ListBox lstbDamage;
+        private System.Windows.Forms.ListBox lstbDamages;
     }
 }

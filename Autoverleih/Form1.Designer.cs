@@ -61,7 +61,7 @@
             this.lstbVerleihautoListe.Name = "lstbVerleihautoListe";
             this.lstbVerleihautoListe.Size = new System.Drawing.Size(188, 228);
             this.lstbVerleihautoListe.TabIndex = 0;
-            this.lstbVerleihautoListe.SelectedIndexChanged += new System.EventHandler(this.LstbVerleihautoListe_SelectedIndexChanged);
+            this.lstbVerleihautoListe.SelectedIndexChanged += new System.EventHandler(this.lstbVerleihautoListe_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -154,7 +154,7 @@
             this.btnSpeichern.TabIndex = 10;
             this.btnSpeichern.Text = "Speichern";
             this.btnSpeichern.UseVisualStyleBackColor = true;
-            this.btnSpeichern.Click += new System.EventHandler(this.BtnSpeichern_Click);
+            this.btnSpeichern.Click += new System.EventHandler(this.btnSpeichern_Click);
             // 
             // txtGefahreneKilometer
             // 
@@ -183,7 +183,7 @@
             this.btnBezahlen.TabIndex = 13;
             this.btnBezahlen.Text = "Bezahlen";
             this.btnBezahlen.UseVisualStyleBackColor = true;
-            this.btnBezahlen.Click += new System.EventHandler(this.BtnBezahlen_Click);
+            this.btnBezahlen.Click += new System.EventHandler(this.btnBezahlen_Click);
             // 
             // btnLoeschen
             // 
@@ -194,7 +194,7 @@
             this.btnLoeschen.TabIndex = 14;
             this.btnLoeschen.Text = "Auto Löschen";
             this.btnLoeschen.UseVisualStyleBackColor = true;
-            this.btnLoeschen.Click += new System.EventHandler(this.BtnLoeschen_Click);
+            this.btnLoeschen.Click += new System.EventHandler(this.btnLoeschen_Click);
             // 
             // txtKilometerstand
             // 
@@ -223,7 +223,7 @@
             this.btnAendern.TabIndex = 17;
             this.btnAendern.Text = "Ändern";
             this.btnAendern.UseVisualStyleBackColor = true;
-            this.btnAendern.Click += new System.EventHandler(this.BtnAendern_Click);
+            this.btnAendern.Click += new System.EventHandler(this.btnAendern_Click);
             // 
             // txtGemieteteTage
             // 
